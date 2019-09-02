@@ -463,6 +463,7 @@ class AutoCompleter(object):
                 for action, tokens in consumed_arg_values.items():
                     setattr(parsed_args, action.dest, tokens)
                 parsed_args.__parser__ = self._parser
+                parsed_args.__line__ = line
                 kwargs[PARSED_ARGS] = parsed_args
 
         # Check if the argument uses a specific tab completion function to provide its choices
